@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* All about navagiation bar */
+.navbar{
+    background-color:#d5f1f8;
+    border-radius: 2455px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+}
+
+.navbar img{
+    width:91px;
+    height: 79px;
+    margin-right: auto;
+}
+.button{
+   display: inline;
+   padding: 14px 22px;
+   margin: 12px;
+  
+   text-decoration: none;
+
+  
+
+}
+.button:hover{
+    color:white;
+    background-color: #0065ff;
+    border: 2px solid #0065fff8;
+    border-radius:24px;
+   
+}
+
+
+.menu-bar{
+    display:none;
+}
+/*media quer */
+@media all and (max-width:737px) {
+    .menu-bar{
+        display: block;
+        position: absolute;
+        right: 13px;
+        top:34px;
+        text-decoration: none;
+
+    }
+    .navbar{
+        flex-direction: column;
+        border-radius: 0px;
+    }
+    .button-main{
+          
+           
+            width: 100%;
+            text-align: center;
+            padding-top: 12px;
+            margin-top: 39px;
+            border-radius: 0px;
+        
+    }
+    .menu-items{
+        display: none;
+    }
+    .active{
+        display:block;
+        
+    }
+    .navbar img{
+        width:91px;
+        height: 79px;
+        margin: auto;}
+
+    .button{
+        display: block;
+       padding: 9px 16px;
+    margin: 14px;
+    border-top: 1px solid white;
+    text-decoration: none;
+    }
+}
