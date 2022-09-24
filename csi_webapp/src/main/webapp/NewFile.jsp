@@ -12,7 +12,7 @@
     <title>csi</title>
 </head>
 <body>
-    
+    <div></div>
     <nav id="navbar" class="navbar">
         
         <img src="2.png" alt="Girl in a jacket" >
