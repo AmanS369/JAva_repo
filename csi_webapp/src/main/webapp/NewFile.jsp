@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="web.css" rel="stylesheet">
-   
+   <link href="//fonts.googleapis.com/css?family=Play" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>csi</title>
 </head>
@@ -19,7 +19,7 @@
         
         <div class="button-main">
        <div class="menu-items" id="menu-items">
-        <a href="web.html" class="button">Home</a>
+        <a href="NewFile.jsp" class="button">Home</a>
         <a  href="about.html"class="button">About</a>
         <a  href="archives.html"class="button">Archives</a>
         <a  href="team.html"class="button">Team</a>
@@ -31,16 +31,33 @@
 
     </nav>    
 <hr>
+<!-- <div class="main_type">
+    <div class="body_type">
+
+             <h1>Welcome to
+             <br></br>
+             <div class="c1"><div class="type">Computer Society Of India</div>
+             <br></br>
+            <div class="c2"><div class="type2">FCRIT Chapter</div>
+            </br>
+            <div class="c3"><div class="type3">IT</div>
+     </div>
 
 
+<img class="big_img" src="2.png"/>
+
+<br></br></h1>
+</div>
+-->
+
+
+
+<div class="main_container">
+<div class="main_content">HEllo</div>
+<img class="big_img" src="2.png"/>
+</div>
   
-    <script >const toggleButtom = document.querySelector('.menu-bar');
-    const navList = document.querySelector('.menu-items');
-
-    toggleButtom.addEventListener("click", show);
-    function show(){
-        navList.classList.toggle("active");
-    }</script>
+    <script src="myscripts.js"></script>
 </body>
 
 </html>
