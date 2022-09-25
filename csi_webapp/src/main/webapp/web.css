@@ -1,12 +1,12 @@
 @charset "UTF-8";
 /* All about navagiation bar */
-.body{
-	background-color:rgb(0, 0, 0);
+body{
+	background-color:red;
 }
 .navbar{
     background-color:black;
-    /* :#d5f1f8*/
-    border-radius: 2455px;
+   /* :#d5f1f8 */
+   /*  border-radius: 2455px; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -40,12 +40,13 @@
 .menu-bar{
     display:none;
 }
-/*media quer */
+
 @media all and (max-width:737px) {
     .menu-bar{
         display: block;
         position: absolute;
         right: 13px;
+        color:yellow;
         top:34px;
         text-decoration: none;
 
@@ -97,7 +98,7 @@
 
     width: 491px;
     text-align: center;
-    /* top: 89px; */
+    top: 89px;
     margin-top: 143px;
     align-items:centre;}
 .main_container img{
@@ -191,12 +192,12 @@ overflow:hidden;
 
     width: 491px;
     text-align: center;
-    /* top: 89px; */
+    top: 89px;
     margin-top: 143px;
     align-items:centre;}
 }
 
-/* for contact page */
+for contact page
 .contactus{
 border:2px solid red;
  }
@@ -207,3 +208,4 @@ padding-top:20px;}
    
 
        
+ 

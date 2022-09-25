@@ -22,7 +22,7 @@
         <a href="NewFile.jsp" class="button">Home</a>
         <a  href="about.html"class="button">About</a>
         <a  href="archives.html"class="button">Archives</a>
-        <a  href="team.html"class="button">Team</a>
+        <a  href="login.html"class="button">Team</a>
         <a  href="contact.html"class="button">Contact US</a>
     </div>
         <label class="menu-bar" id="menu-bar"  for="toggle">&#9776</label>
@@ -30,26 +30,6 @@
 </div>
 
     </nav>    
-<hr>
-<!-- <div class="main_type">
-    <div class="body_type">
-
-             <h1>Welcome to
-             <br></br>
-             <div class="c1"><div class="type">Computer Society Of India</div>
-             <br></br>
-            <div class="c2"><div class="type2">FCRIT Chapter</div>
-            </br>
-            <div class="c3"><div class="type3">IT</div>
-     </div>
-
-
-<img class="big_img" src="2.png"/>
-
-<br></br></h1>
-</div>
--->
-
 
 
 
