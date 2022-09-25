@@ -4,7 +4,8 @@
 	background-color:#d5f1f8;
 }
 .navbar{
-    background-color:#d5f1f8;
+    background-color:black;
+    /* :#d5f1f8*/
     border-radius: 2455px;
     display: flex;
     justify-content: space-around;
