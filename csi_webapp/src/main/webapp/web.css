@@ -1,5 +1,8 @@
 @charset "UTF-8";
 /* All about navagiation bar */
+.body{
+	background-color:#d5f1f8;
+}
 .navbar{
     background-color:#d5f1f8;
     border-radius: 2455px;
@@ -166,27 +169,30 @@
 	width:200px;
 	margin-left:auto;
 	height:200px;
-	margin-top:20px;
+
+	position:relative;
 	margin-right:220px;
-	animation-name:main_animation;
-	animation-time:20s;
+	animation:main_animation 20s infinite;
+
 } 
-@-webkit-keyframes main_animation {
+@keyframes main_animation {
    from {
      margin-top:20px;
    }
    
    to {
-      margin-top:21px;
-
+      margin-top:231px;
 }
 }
 
 /* for contact page */
 .contactus{
-border:2px solid red;
+border:200px solid red;
  }
+ 
 .element{
 
 padding-top:20px;}
+   
+
        
