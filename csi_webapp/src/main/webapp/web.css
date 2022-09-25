@@ -1,7 +1,11 @@
 @charset "UTF-8";
 /* All about navagiation bar */
+.body{
+	background-color:rgb(0, 0, 0);
+}
 .navbar{
-    background-color:#d5f1f8;
+    background-color:black;
+    /* :#d5f1f8*/
     border-radius: 2455px;
     display: flex;
     justify-content: space-around;
@@ -80,3 +84,126 @@
     text-decoration: none;
     }
 }
+
+ .main_container{
+  display:flex;
+  flex-direction:row;
+  height:500px;
+  background-color:black;
+   
+  }
+  .main_content{
+
+
+    width: 491px;
+    text-align: center;
+    /* top: 89px; */
+    margin-top: 143px;
+    align-items:centre;}
+.main_container img{
+	
+	width:450px;
+	margin-left:auto;
+	height:450px;
+
+	position:relative;
+	margin-right:220px;
+	animation:main_animation 20s infinite;
+
+} 
+@keyframes main_animation {
+   from {
+     margin-top:10px;
+   }
+   
+   to {
+      margin-top:159px;
+}
+}
+.wrapper{
+	display:flex;
+}
+.wrapper ,.static-txt{
+	color:cyan;
+	font-size:60px;
+	font-weight:400;
+	
+}
+.wrapper .dynamic-txts{
+	margin-left:15px;
+	line-height:90px;
+	height:90px;
+overflow:hidden; 
+}
+.dynamic-txts li{
+	list-style:none;
+	color:#f2e30d;
+	font-size:60px;
+	font-weight:500;
+	position:relative;
+	top:0px;
+	animation: slide 12s steps(4) infinite;
+}
+.csi_special{
+	font-style:italic;
+}
+.dynamic-txts li::after{
+	content:"";
+	position:absolute;
+	height:100%;
+	width:100%;
+	background-color:black;
+	border-left:2px solid #8992ff;
+	animation: typing 3s steps(10) infinite;
+}
+@keyframes typing{
+	40%,60%{
+	left:calc(100% + 30px);
+	}
+	100%{
+	left:0;
+	}
+}
+@keyframes slide{
+	100%{
+	top:-391px;
+	}
+	
+}
+@media all and (max-width:737px){
+	.main_container img{
+	width:200px;
+	display:none;
+	height:200px;
+
+	
+	margin-right:220px;
+	animation:main_animation 20s infinite;}
+	 .main_container{
+ 
+  
+  height:500px;
+  background-color:black;
+   
+  }
+  .main_content{
+  display:block;
+
+    width: 491px;
+    text-align: center;
+    /* top: 89px; */
+    margin-top: 143px;
+    align-items:centre;}
+}
+
+/* for contact page */
+.contactus{
+border:2px solid red;
+ }
+ 
+.element{
+
+padding-top:20px;}
+   
+
+       
