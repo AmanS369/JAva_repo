@@ -52,8 +52,19 @@
 
 
 
+
 <div class="main_container">
-<div class="main_content">HEllo</div>
+<div class="main_content">
+<div class="wrapper">
+<div class="static-txt"> </div>
+<ul class="dynamic-txts">
+<li><span>Eat</span></li>
+<li><span>Play</span></li>
+<li><span>Code</span></li>
+<li><span class="csi_special">CSI</span></li>
+</ul>
+</div>
+</div>
 <img class="big_img" src="2.png"/>
 </div>
   
