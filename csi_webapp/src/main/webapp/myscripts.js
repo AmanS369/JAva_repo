@@ -6,6 +6,7 @@ function show(){
     navList.classList.toggle("active");
 }
 
+
 function alerts(){
 	alert("your Issue has been raised");
 }
