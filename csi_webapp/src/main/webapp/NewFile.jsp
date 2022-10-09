@@ -15,7 +15,7 @@
     <div></div>
     <nav id="navbar" class="navbar">
         
-        <img src="2.png" alt="Girl in a jacket" >
+        <img src="2.png" alt="Girl in a t" >
         
         <div class="button-main">
        <div class="menu-items" id="menu-items">
