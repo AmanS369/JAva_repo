@@ -1,351 +1,121 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="web.css" rel="stylesheet">
+   <link href="//fonts.googleapis.com/css?family=Play" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>csi</title>
 </head>
 <style>
-  body{
-    background-color: black;
-  }
-        .about-body {
-      margin: 0;
-     
-      padding: 2rem;
-      font-family: Inter, sans-serif;
-    }
 
-.about-body a.link {
-  border: none;
-  position: absolute;
-  bottom: 1rem;
-  width: auto;
-  right: 1rem;
-}
-.about-body a {
-  color: rgba(255,255,255,0.5);
-  font-size: 1rem;
-  font-family: Inter, sans-serif;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  display: block;
-  font-size: 1.25rem;
-  padding: 1rem 1.5rem;
-  float: left;
+.main_animation_body{
   width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13),       transparent),
+    radial-gradient(circle at 20% 80%, rgba(6, 6, 6, 0.13), transparent)
 }
-    #dark-light-container {
-        float: left;
-        box-sizing: border-box;
-        position: relative;
-        padding: 2rem;
-        width: 50%;
-        text-align: center;
-
-    }
-    .white-container { background: white; }
-    .black-container { background: black; }
-
-    .card {
-        box-shadow: none;
-        backface-visibility: visible;
-        background: transparent;
-      font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
-        transform-style: preserve-3d;
-        padding: 0;
-        height: auto;
-        margin: 0 2rem 4rem 0;
-        width: 18rem;
-        height: 25rem;
-        float: left;
-        transition: all 0.2s ease-out;
-        border: none;
-        letter-spacing: 1px;
-    }
-    .Info, .back {
-        background: rgba(0,0,0,0.1);
-        font-size: 1rem;
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        padding: 0.5rem 0.75rem;
-        border-radius: 100px;
-        line-height: 1rem;
-        cursor: pointer;
-        transition: all 0.1s ease-out;
-    }
- .Info,.back {
-    background: #1b29ed;
-    box-shadow: 0 2px 20px #0b1485;
-}
-
-.inner-card-backface .image {
-  position: absolute;
-  top: 0;
-  left: 0;
+canvas {
+  position: fixed;
   width: 100%;
-  border-radius: 14px;
   height: 100%;
-  transform: rotateY(180deg);
-  background-size: auto 102%;
-  background-position: -2px -5px;
 }
-.back {
-  top: auto;
-  background: #2d2d62;
-  bottom: 1rem;
-}
-    .Info:hover {
-      background: rgba(0,0,0,0.3);
-    }
-
-.Info:hover,  .back:hover {
-  background: #0f1cc5;
-}
-    .inner-card-backface {
-        transform: rotateX(0) rotateY(0deg) scale(1) translateZ(-4px);
-      border-radius: 14px;
-      background: linear-gradient(45deg, #0b0b2a, #0b0b2a);
-      position: absolute;
-      top: 0;
-      color: white;
-      padding: 2rem;
-      box-sizing: border-box;
-      transition: all 0.15s ease-out;
-        will-change: transform, filter;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .card.Infoped {
-      transform: rotateY(180deg);
-    }
-    .card .Info-inner-card {
-      transform: rotateY(180deg);
-      position: absolute;
-      top: 0;
-      padding: 2rem 1.5rem;
-      box-sizing: border-box;
-      left: 0;
-      width: 100%;
-      height: 100%;
-   }
-      .Info-inner-card h3 {
-        font-size: 1.25rem;
-        margin-top: 0;
-      }
-      .Info-inner-card p {
-        color: rgba(255,255,255,0.6);
-        font-weight: 400;
-        line-height: 1.5rem;
-      }
-    .card .inner-card {
-        font-size: 2rem;
-        color: white;
-        padding: 1rem 2rem;
-        line-height: 3rem;
-        will-change: transform, filter;
-        float: none;
-        background: black;
-        background-size: calc(100% + 6px) auto;
-        background-position: -3px -3px;
-        margin: 0;
-        transition: all 0.15s ease-out;
-        height: auto;
-        border-radius: 14px;
-        box-sizing: border-box;
-        overflow: hidden;
-        display: block;
-        margin: 0px auto;
-        transform: rotateX(0deg) rotateY(0deg) scale(1);
-        top: 0;
-        height: 100%;
-        filter: drop-shadow(0 15px 15px rgba(0,0,0,0.3));
-        font-weight: 500;
-        perspective-origin: 0 0;
-        letter-spacing: 0;
-    }
-
-.card .glare {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+.line {
+ 
+  position: relative;
+  
   width: 100%;
-  transition: all 0.1s ease-out;
-  opacity: 0.6;
-  pointer-events: none;
-  height: 100%;
-  border-radius: 14px;
-  z-index: 9999;
-  mix-blend-mode: hard-light;
-  background: radial-gradient(circle at 50% 50%, rgb(199 198 243), transparent); 
-}
-
-.card .top-section {
-  background: linear-gradient(45deg, hsl(0deg 58% 51%), hsl(249deg 100% 54%));
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 14px 14px 0 0;
-  width: 100%;
-  height: 35%;
-  z-index: 99;
-}
-.card .top-section img{
-  width:140px;
-  height:140px;
-  margin-left:65px;
-  margin-top: 65px;
-  border-radius: 100px;
-}
-.user-2 .top-section {
-  background: linear-gradient(45deg, hsl(224deg 58% 51%), hsl(166deg 100% 54%));
-}
-.card .user-icon {
-  position: absolute;
-  left: calc(50% - 64px);
-  top: calc(35% - 72px);
-  z-index: 99;
-}
-.card .user-icon img {
-  width: 128px;
-  height: 128px;
-  box-shadow: 0 4px 9px rgba(0,0,0,0.2);
-  border-radius: 100px;
-  transform: scale(1);
-  transition: all 0.1s ease-out;
-}
-
-.card .user-icon img:hover {
-  transform: scale(1.08);
-}
-.card .glare {
-  opacity: 0;
-}
-.card.animated .glare {
-  opacity: 0.3;
-}
-
-.card.animated.user .glare {
-  opacity: 0.15;
-}
-
-.card .name {
-  color: white;
-  font-size: 1.5rem;
-}
-
-.card .bottom-section {
-  position: absolute;
-  top: 35%;
-  left: 0;
-  background: #0b0b2a;
-  width: 100%;
-  height: 65%;
-  box-sizing: border-box;
-  padding-top: 64px;
-  text-align: center;
-}
-
-.bottom-section .area {
-  font-size: 1rem;
-  opacity: 0.4;
-  display: block;
-  line-height: 1rem;
-}
-.buttons {
-  float: left;
-  width:  calc(100% - 2rem);
-  position: absolute;
-  bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  left: 1rem;
-}
-.buttons > a {    
-    border: none;
-    width: auto;
-    background: #b2b2ff;
-    padding: 0;
-    font-size: 0.875rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    line-height: 1rem;
-    transition: all 0.1s ease-out;
-    transform: scale(1);
-    padding: 0.75rem 1rem;
-    margin: 0 1rem 0 0;
-    border-radius: 100px;
-    text-decoration: none;
-}
-.buttons .main {
-  background: #3d26e7;
-}
-.buttons > .main:hover {
-  background: #614df1;
-}
-.buttons > a:hover {
-  background: #494989;
-}
-.buttons  svg {
-  margin: 0 0.5rem 0 0;
-}
-.buttons {
+  padding: 11px;
   margin: 0;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  top:27px;
+  transform: translateY(-50%);
 }
-    @media screen and (max-width: 1000px) {
-        #dark-light-container > div {
-            width: 100%;
-        }
-    }
 
-    
-    .CSI_container1,.CSI_container2{
-       border-radius: 25px;
-        display: flex;
-        margin:20px;
-        background-color:#6046b9;
-    }
-    .CSI_container1:hover,.CSI_container2:hover{
-      box-shadow: 8px 8px 20px 10px rgba(229, 223, 223, 0.4);
-      margin-top: 10px;
-      background-color: #8973d9;
-    }
+.anim-typewritter{
+  animation: typewritter 10s steps(40) infinite,
+    blinkTextCursor 500ms steps(40) infinite normal ;
+}
+
+@keyframes typewritter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(248, 241, 241, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
    
 
-    .CSI_container img{
-        width: 150px;
-        height: 150px;
-        /* border: 2px solid green; */
-        margin: auto;
-    }
-    .CSI_info1{
-        /* border: 3px solid yellow; */
-        margin: 40px;
-        padding: 39px;
-        
-    }
-    .CSI_info1,.CSI_info2{
-        text-align: center;
-    }
-    .CSI_info1:hover,.CSI_info2:hover{
-         font-style: italic;
-              
-    }
-    .CSI_info2{
-        /* border: 3px solid yellow; */
-        margin: 40px;
-        padding: 39px;
-    }
-    .navbar{
+
+
+.typewritter{
+    overflow: hidden;
+  width:fit-content;
+position:absolute;
+color:white;
+left:0;
+right:0;
+
+   margin-left:50vw;
+   margin-top:50vh;
+transform: translate(-50%, 50%);
+
+
+
+}
+.name img{
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    display: block;
+    margin-left: 40vw;
+    margin-top: 13vh;
+    text-align: centre;
+    color: rgb(0, 0, 0);
+    
+}
+.dep{
+    position: absolute;
+    color: #fff;
+    font-size: 2rem;
+    font-family: "Times New Roman", Times, serif;
+    /* margin-left: 45vw; */
+    /* margin-right: 45vw; */
+    margin-top: 48vh;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+.animation_body{
+display:flex;
+    overflow:hidden;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+.navbar{
     background-color:black;
    /* :#d5f1f8 */
-   /*  border-radius: 2455px; */
+    border-radius:0px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -425,354 +195,267 @@
     }
 }
 
- 
 </style>
 <body>
+    <div></div>
+    <nav id="navbar" class="navbar">
+        
+        <img src="2.png" alt="Girl in a jacket" >
+        
+        <div class="button-main">
+       <div class="menu-items" id="menu-items">
+        <a href="NewFile.jsp" class="button">Home</a>
+        <a  href="about.html"class="button">About</a>
+        <a  href="archives.html"class="button">Archives</a>
+        <a  href="login.html"class="button">Team</a>
+        <a  href="contact.html"class="button">Contact US</a>
+    </div>
+        <label class="menu-bar" id="menu-bar"  for="toggle">&#9776</label>
+
+</div>
+
+    </nav>    
+    <div class="main_animation_body">
+
+<div class="animation_body" >
+     <div class="name" >
+    <img src="2.png">
+    </div>
+    <div class="dep">Information Technology</div>
+    <div class="typewritter">
+  <p class="line anim-typewritter">LIVE THE CODE</p>
+</div>
    
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
-
-<nav id="navbar" class="navbar">
-        
-  <img src="2.png" alt="Girl in a jacket" >
-  
-  <div class="button-main">
- <div class="menu-items" id="menu-items">
-  <a href="NewFile.jsp" class="button">Home</a>
-  <a  href="about.html"class="button">About</a>
-  <a  href="archives.html"class="button">Archives</a>
-  <a  href="team.html"class="button">Team</a>
-  <a  href="contact.html"class="button">Contact US</a>
-</div>
-  <label class="menu-bar" id="menu-bar"  for="toggle">&#9776</label>
-
-</div>
-
-</nav>
-<div class="about-body">
-<div class="CSI_container">
-
-  <div class="CSI_container1">
-      <div class="CSI_info1">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, dignissimos nesciunt. Et, corporis nesciunt quam quis mollitia possimus quisquam tempore accusamus voluptatem facilis maxime, quidem ratione error culpa? Expedita, reprehenderit.
-
-      </div>
-      <img src="csi-logo.png">
-  </div>
-
-  <div class="CSI_container2">
-   <img src="2.png">
-   <div class="CSI_info2">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus illo voluptatibus sint alias velit veritatis vitae quibusdam. Fugiat, consequuntur minima sapiente harum temporibus vero, id sint, vel quia reprehenderit cumque?
-   </div>
-  </div>
-
-  <div>
-    <br>
-    <br>
-    <br>
-  </div>
-<div class="card user">
-    <span class="inner-card-backface">
-      <span class="Info-inner-card">
-      <h3>About</h3>
-      <p>Qualification : ME</p>
-        <p>Designation : Assistant Professor</p>
-        <p>Email id : rupali.deshmukh@fcrit.ac.in</p>
-        <span class="back">back</span>
-      </span>
-    </span>
-    <span class="inner-card">
-    <span class="user-details">
-      <span class="top-section">
-        <img src="csihead.jpg">
-        <span class="Info">Info</span>
-      </span>
-      <span class="bottom-section">
-        <span class="name">Ms. Rupali Deshmukh</span>
-        <span class="area"><span class="area-container">Engineering</span></span>
-        <span class="buttons">
-          <a href="https://linkedin.com/smpnjn" target="_blank" class="linkedin main"><i class="fa-light fa-hashtag"></i></a>
-         
-        </span>
+            
     
-    <span class="glare"></span>
-  </span>
 </div>
 
-<div class="card user user-2">
-    <span class="inner-card-backface">
-      <span class="Info-inner-card">
-      <h3>About</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet est nunc.</p>
-        <span class="back">back</span>
-      </span>
-    </span>
-  <span class="inner-card">
-    <span class="user-details">
-      <span class="top-section">
-        <span class="Info">Info</span>
-      </span>
-      <span class="bottom-section">
-        <span class="name">John hhhDoe</span>
-        <span class="area"><span class="area-container">VP Software</span></span>
-        <span class="buttons">
-          <a href="https://linkedin.com/smpnjn" target="_blank" class="linkedin main"><i class="fa-light fa-hashtag"></i></a>
-          
-        </span>
-      
-    </span>
-    <span class="glare"></span>
-  </span>
+<canvas id="background"></canvas> 
 </div>
+    <script src="myscripts.js"></script>
+    <script>
+    const STAR_COUNT = ( window.innerWidth + window.innerHeight ) / 8,
+      STAR_SIZE = 3,
+      STAR_MIN_SCALE = 0.2,
+      OVERFLOW_THRESHOLD = 50;
 
-<div class="card user user-2">
-  <span class="inner-card-backface">
-    <span class="Info-inner-card">
-    <h3>About</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet est nunc.</p>
-      <span class="back">back</span>
-    </span>
-  </span>
-<span class="inner-card">
-  <span class="user-details">
-    <span class="top-section">
-      <span class="Info">Info</span>
-    </span>
-    <span class="bottom-section">
-      <span class="name">John hhhDoe</span>
-      <span class="area"><span class="area-container">VP Software</span></span>
-      <span class="buttons">
-        <a href="https://linkedin.com/smpnjn" target="_blank" class="linkedin main"><i class="fa-light fa-hashtag"></i></a>
-        
-      </span>
-    
-  </span>
-  <span class="glare"></span>
-</span>
-</div>
+const canvas = document.querySelector( 'canvas' ),
+      context = canvas.getContext( '2d' );
 
+let scale = 1, // device pixel ratio
+    width,
+    height;
 
+let stars = [];
 
-<div class="card user user-2">
-  <span class="inner-card-backface">
-    <span class="Info-inner-card">
-    <h3>About</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet est nunc.</p>
-      <span class="back">back</span>
-    </span>
-  </span>
-<span class="inner-card">
-  <span class="user-details">
-    <span class="top-section">
-      <span class="Info">Info</span>
-    </span>
-    <span class="bottom-section">
-      <span class="name">John hhhDoe</span>
-      <span class="area"><span class="area-container">VP Software</span></span>
-      <span class="buttons">
-        <a href="https://linkedin.com/smpnjn" target="_blank" class="linkedin main"><i class="fa-light fa-hashtag"></i></a>
-        
-      </span>
-    
-  </span>
-  <span class="glare"></span>
-</span>
-</div>
+let pointerX,
+    pointerY;
 
-<div class="card user user-2">
-  <span class="inner-card-backface">
-    <span class="Info-inner-card">
-    <h3>About</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet est nunc.</p>
-      <span class="back">back</span>
-    </span>
-  </span>
-<span class="inner-card">
-  <span class="user-details">
-    <span class="top-section">
-      <span class="Info">Info</span>
-    </span>
-    <span class="bottom-section">
-      <span class="name">John hhhDoe</span>
-      <span class="area"><span class="area-container">VP Software</span></span>
-      <span class="buttons">
-        <a href="https://linkedin.com/smpnjn" target="_blank" class="linkedin main"><i class="fa-light fa-hashtag"></i></a>
-        
-      </span>
-    
-  </span>
-  <span class="glare"></span>
-</span>
-</div>
+let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0005 };
 
-<div class="card user user-2">
-  <span class="inner-card-backface">
-    <span class="Info-inner-card">
-    <h3>About</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet est nunc.</p>
-      <span class="back">back</span>
-    </span>
-  </span>
-<span class="inner-card">
-  <span class="user-details">
-    <span class="top-section">
-      <span class="Info">Info</span>
-    </span>
-    <span class="bottom-section">
-      <span class="name">John hhhDoe</span>
-      <span class="area"><span class="area-container">VP Software</span></span>
-      <span class="buttons">
-        <a href="https://linkedin.com/smpnjn" target="_blank" class="linkedin main"><i class="fa-light fa-hashtag"></i></a>
-        
-      </span>
-    
-  </span>
-  <span class="glare"></span>
-</span>
-</div>
+let touchInput = false;
 
-<div class="card user user-2">
-  <span class="inner-card-backface">
-    <span class="Info-inner-card">
-    <h3>About</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet est nunc.</p>
-      <span class="back">back</span>
-    </span>
-  </span>
-<span class="inner-card">
-  <span class="user-details">
-    <span class="top-section">
-      <span class="Info">Info</span>
-    </span>
-    <span class="bottom-section">
-      <span class="name">John hhhDoe</span>
-      <span class="area"><span class="area-container">VP Software</span></span>
-      <span class="buttons">
-        <a href="https://linkedin.com/smpnjn" target="_blank" class="linkedin main"><i class="fa-light fa-hashtag"></i></a>
-        
-      </span>
-    
-  </span>
-  <span class="glare"></span>
-</span>
-</div>
+generate();
+resize();
+step();
 
-<div class="card user user-2">
-  <span class="inner-card-backface">
-    <span class="Info-inner-card">
-    <h3>About</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet est nunc.</p>
-      <span class="back">back</span>
-    </span>
-  </span>
-<span class="inner-card">
-  <span class="user-details">
-    <span class="top-section">
-      <span class="Info">Info</span>
-    </span>
-    <span class="bottom-section">
-      <span class="name">John hhhDoe</span>
-      <span class="area"><span class="area-container">VP Software</span></span>
-      <span class="buttons">
-        <a href="https://linkedin.com/smpnjn" target="_blank" class="linkedin main"><i class="fa-light fa-hashtag"></i></a>
-        
-      </span>
-    
-  </span>
-  <span class="glare"></span>
-</span>
-</div>
-</div>
+window.onresize = resize;
+canvas.onmousemove = onMouseMove;
+canvas.ontouchmove = onTouchMove;
+canvas.ontouchend = onMouseLeave;
+document.onmouseleave = onMouseLeave;
 
+function generate() {
 
+   for( let i = 0; i < STAR_COUNT; i++ ) {
+    stars.push({
+      x: 0,
+      y: 0,
+      z: STAR_MIN_SCALE + Math.random() * ( 1 - STAR_MIN_SCALE )
+    });
+   }
 
-
-  <script>
-    const toggleButtom = document.querySelector('.menu-bar');
-const navList = document.querySelector('.menu-items');
-
-toggleButtom.addEventListener("click", show);
-function show(){
-    navList.classList.toggle("active");
 }
 
-    let calculateAngle = function(e, item, parent) {
-        let dropShadowColor = `rgba(0, 0, 0, 0.3)`
-        if(parent.getAttribute('data-filter-color') !== null) {
-            dropShadowColor = parent.getAttribute('data-filter-color');
-        }
+function placeStar( star ) {
 
-        parent.classList.add('animated');
-       
-        let x = Math.abs(item.getBoundingClientRect().x - e.clientX);
-        // Get the y position relative to the button
-        let y = Math.abs(item.getBoundingClientRect().y - e.clientY);
+  star.x = Math.random() * width;
+  star.y = Math.random() * height;
 
-        // Calculate half the width and height
-        let halfWidth  = item.getBoundingClientRect().width / 2;
-        let halfHeight = item.getBoundingClientRect().height / 2;
+}
 
-        // Use this to create an angle. I have divided by 6 and 4 respectively so the effect looks good.
-        // Changing these numbers will change the depth of the effect.
-        let calcAngleX = (x - halfWidth) / 6;
-        let calcAngleY = (y - halfHeight) / 14;
-      
-        let gX = (1 - (x / (halfWidth * 2))) * 100;
-        let gY = (1 - (y / (halfHeight * 2))) * 100;
-      
-        item.querySelector('.glare').style.background = `radial-gradient(circle at ${gX}% ${gY}%, rgb(199 198 243), transparent)`;
-        // And set its container's perspective.
-        parent.style.perspective = `${halfWidth * 6}px`
-        item.style.perspective = `${halfWidth * 6}px`
+function recycleStar( star ) {
 
-        // Set the items transform CSS property
-        item.style.transform = `rotateY(${calcAngleX}deg) rotateX(${-calcAngleY}deg) scale(1.04)`;
-        parent.querySelector('.inner-card-backface').style.transform = `rotateY(${calcAngleX}deg) rotateX(${-calcAngleY}deg) scale(1.04) translateZ(-4px)`;
-      
-        if(parent.getAttribute('data-custom-perspective') !== null) {
-            parent.style.perspective = `${parent.getAttribute('data-custom-perspective')}`
-        }
+  let direction = 'z';
 
-        // Reapply this to the shadow, with different dividers
-        let calcShadowX = (x - halfWidth) / 3;
-        let calcShadowY = (y - halfHeight) / 6;
-        
-        // Add a filter shadow - this is more performant to animate than a regular box shadow.
-        item.style.filter = `drop-shadow(${-calcShadowX}px ${-calcShadowY}px 15px ${dropShadowColor})`;
+  let vx = Math.abs( velocity.tx ),
+	    vy = Math.abs( velocity.ty );
+
+  if( vx > 1 && vy > 1 ) {
+    let axis;
+
+    if( vx > vy ) {
+      axis = Math.random() < Math.abs( velocity.x ) / ( vx + vy ) ? 'h' : 'v';
+    }
+    else {
+      axis = Math.random() < Math.abs( velocity.y ) / ( vx + vy ) ? 'v' : 'h';
     }
 
-    document.querySelectorAll('.card').forEach(function(item) {
-        if(item.querySelector('.Info') !== null) {
-          item.querySelector('.Info').addEventListener('click', function() {
-            item.classList.add('Infoped');
-          });
-        }
-        if(item.querySelector('.back') !== null) {
-          item.querySelector('.back').addEventListener('click', function() {
-            item.classList.remove('Infoped');
-          });
-        }
-        item.addEventListener('mouseenter', function(e) {
-            calculateAngle(e, this.querySelector('.inner-card'), this);
-        });
+    if( axis === 'h' ) {
+      direction = velocity.x > 0 ? 'l' : 'r';
+    }
+    else {
+      direction = velocity.y > 0 ? 't' : 'b';
+    }
+  }
+  
+  star.z = STAR_MIN_SCALE + Math.random() * ( 1 - STAR_MIN_SCALE );
 
-        item.addEventListener('mousemove', function(e) {
-            calculateAngle(e, this.querySelector('.inner-card'), this);
-        });
+  if( direction === 'z' ) {
+    star.z = 0.1;
+    star.x = Math.random() * width;
+    star.y = Math.random() * height;
+  }
+  else if( direction === 'l' ) {
+    star.x = -STAR_SIZE;
+    star.y = height * Math.random();
+  }
+  else if( direction === 'r' ) {
+    star.x = width + STAR_SIZE;
+    star.y = height * Math.random();
+  }
+  else if( direction === 't' ) {
+    star.x = width * Math.random();
+    star.y = -STAR_SIZE;
+  }
+  else if( direction === 'b' ) {
+    star.x = width * Math.random();
+    star.y = height + STAR_SIZE;
+  }
 
-        item.addEventListener('mouseleave', function(e) {
-            let dropShadowColor = `rgba(0, 0, 0, 0.3)`
-            if(item.getAttribute('data-filter-color') !== null) {
-                dropShadowColor = item.getAttribute('data-filter-color')
-            }
-            item.classList.remove('animated');
-            item.querySelector('.inner-card').style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`;
-            item.querySelector('.inner-card-backface').style.transform = `rotateY(0deg) rotateX(0deg) scale(1.01) translateZ(-4px)`;
-            item.querySelector('.inner-card').style.filter = `drop-shadow(0 10px 15px ${dropShadowColor})`;
-        });
-    })
-  </script>  
+}
+
+function resize() {
+
+  scale = window.devicePixelRatio || 1;
+
+  width = window.innerWidth * scale;
+  height = window.innerHeight * scale;
+
+  canvas.width = width;
+  canvas.height = height;
+
+  stars.forEach( placeStar );
+
+}
+
+function step() {
+
+  context.clearRect( 0, 0, width, height );
+
+  update();
+  render();
+
+  requestAnimationFrame( step );
+
+}
+
+function update() {
+
+  velocity.tx *= 0.95;
+  velocity.ty *= 0.95;
+
+  velocity.x += ( velocity.tx - velocity.x ) * 0.7;
+  velocity.y += ( velocity.ty - velocity.y ) * 0.7;
+
+  stars.forEach( ( star ) => {
+
+    star.x += velocity.x * star.z;
+    star.y += velocity.y * star.z;
+
+    star.x += ( star.x - width/2 ) * velocity.z * star.z;
+    star.y += ( star.y - height/2 ) * velocity.z * star.z;
+    star.z += velocity.z;
+  
+    // recycle when out of bounds
+    if( star.x < -OVERFLOW_THRESHOLD || star.x > width + OVERFLOW_THRESHOLD || star.y < -OVERFLOW_THRESHOLD || star.y > height + OVERFLOW_THRESHOLD ) {
+      recycleStar( star );
+    }
+
+  } );
+
+}
+
+function render() {
+
+  stars.forEach( ( star ) => {
+
+    context.beginPath();
+    context.lineCap = 'round';
+    context.lineWidth = STAR_SIZE * star.z * scale;
+    context.strokeStyle = 'rgba(255,255,255,'+(0.5 + 0.5*Math.random())+')';
+
+    context.beginPath();
+    context.moveTo( star.x, star.y );
+
+    var tailX = velocity.x * 2,
+        tailY = velocity.y * 2;
+
+    // stroke() wont work on an invisible line
+    if( Math.abs( tailX ) < 0.1 ) tailX = 0.5;
+    if( Math.abs( tailY ) < 0.1 ) tailY = 0.5;
+
+    context.lineTo( star.x + tailX, star.y + tailY );
+
+    context.stroke();
+
+  } );
+
+}
+
+function movePointer( x, y ) {
+
+  if( typeof pointerX === 'number' && typeof pointerY === 'number' ) {
+
+    let ox = x - pointerX,
+        oy = y - pointerY;
+
+    velocity.tx = velocity.x + ( ox / 8*scale ) * ( touchInput ? -1 : 1 );
+    velocity.ty = velocity.y + ( oy / 8*scale ) * ( touchInput ? -1 : 1 );
+
+  }
+
+  pointerX = x;
+  pointerY = y;
+
+}
+
+function onMouseMove( event ) {
+
+  touchInput = false;
+
+  movePointer( event.clientX, event.clientY );
+
+}
+
+function onTouchMove( event ) {
+
+  touchInput = true;
+
+  movePointer( event.touches[0].clientX, event.touches[0].clientY, true );
+
+  event.preventDefault();
+
+}
+
+function onMouseLeave() {
+
+  pointerX = null;
+  pointerY = null;
+
+}
+</script>
+    
 </body>
+
 </html>
